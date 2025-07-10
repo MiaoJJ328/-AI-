@@ -1,0 +1,28 @@
+    {
+        "days": [
+            {
+                "date": "2024-03-15",
+                "metrics": {
+                    "water_ml": 280,
+                    "food_g": 150,
+                    "excretion": 3
+                }
+            },
+            {
+                "date": "2024-03-16",
+                "metrics": {
+                    "water_ml": 320,
+                    "food_g": 170,
+                    "excretion": 2
+                }
+            },
+            {
+                "date": "2024-03-17",
+                "metrics": {
+                    "water_ml": 240,
+                    "food_g": 190,
+                    "excretion": 4
+                }
+            }
+        ]
+    }
