@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.cleanFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- 除臭 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="180dp"
+                android:layout_height="220dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardPreventCornerOverlap="true"
+                android:layout_weight="1">
+
+                <!-- 主布局：垂直排列 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+                    android:padding="20dp"
+                    android:gravity="center_horizontal">
+
+                    <!-- 标题和开关区域 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp"
+                        android:paddingBottom="0dp"
+                        android:background="?attr/selectableItemBackgroundBorderless">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:letterSpacing="0.02"
+                            android:text="除臭"
+                            android:textColor="#333333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/deodorization"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:trackTint="@drawable/switch_track_color"
+                            app:thumbTint="@android:color/white"
+                            android:splitTrack="false"
+                            android:theme="@style/CustomSwitch"/>
+                    </LinearLayout>
+
+                    <!-- 图标区域 -->
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_deodorization"
+                        android:scaleType="fitCenter"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="2dp"/>
+
+                    <!-- 描述文本 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Deodorization"
+                        android:textColor="#666666"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 除臭 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="180dp"
+                android:layout_height="220dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardPreventCornerOverlap="true"
+                android:layout_weight="1">
+
+                <!-- 主布局：垂直排列 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+                    android:padding="20dp"
+                    android:gravity="center_horizontal">
+
+                    <!-- 标题和开关区域 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp"
+                        android:paddingBottom="0dp"
+                        android:background="?attr/selectableItemBackgroundBorderless">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:letterSpacing="0.02"
+                            android:text="自动清理"
+                            android:textColor="#333333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/autoclean"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:trackTint="@drawable/switch_track_color"
+                            app:thumbTint="@android:color/white"
+                            android:splitTrack="false"
+                            android:theme="@style/CustomSwitch"/>
+                    </LinearLayout>
+
+                    <!-- 图标区域 -->
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_autoclean"
+                        android:scaleType="fitCenter"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="2dp"/>
+
+                    <!-- 描述文本 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Clean"
+                        android:textColor="#666666"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- 除臭 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="180dp"
+                android:layout_height="220dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardPreventCornerOverlap="true"
+                android:layout_weight="1">
+
+                <!-- 主布局：垂直排列 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+                    android:padding="20dp"
+                    android:gravity="center_horizontal">
+
+                    <!-- 标题和开关区域 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp"
+                        android:paddingBottom="0dp"
+                        android:background="?attr/selectableItemBackgroundBorderless">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:letterSpacing="0.02"
+                            android:text="冲厕"
+                            android:textColor="#333333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/pushwater"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:trackTint="@drawable/switch_track_color"
+                            app:thumbTint="@android:color/white"
+                            android:splitTrack="false"
+                            android:theme="@style/CustomSwitch"/>
+                    </LinearLayout>
+
+                    <!-- 图标区域 -->
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_autopushwater"
+                        android:scaleType="fitCenter"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="2dp"/>
+
+                    <!-- 描述文本 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="AutoPush"
+                        android:textColor="#666666"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 除臭 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="180dp"
+                android:layout_height="220dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardPreventCornerOverlap="true"
+                android:layout_weight="1">
+
+                <!-- 主布局：垂直排列 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+                    android:padding="20dp"
+                    android:gravity="center_horizontal">
+
+                    <!-- 标题和开关区域 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp"
+                        android:paddingBottom="0dp"
+                        android:background="?attr/selectableItemBackgroundBorderless">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:letterSpacing="0.02"
+                            android:text="厕所灯"
+                            android:textColor="#333333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/led"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:trackTint="@drawable/switch_track_color"
+                            app:thumbTint="@android:color/white"
+                            android:splitTrack="false"
+                            android:theme="@style/CustomSwitch"/>
+                    </LinearLayout>
+
+                    <!-- 图标区域 -->
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_ledlight"
+                        android:scaleType="fitCenter"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="2dp"/>
+
+                    <!-- 描述文本 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Clean"
+                        android:textColor="#666666"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardPreventCornerOverlap="true"
+            android:layout_weight="1">
+
+            <!-- 主布局：垂直排列 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- 标题和开关区域 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:paddingBottom="0dp"
+                    android:background="?attr/selectableItemBackgroundBorderless">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="排泄物马桶清洁"
+                        android:textSize="18sp"
+                        android:textColor="#333333"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.02"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/auto_clean_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/switch_off"
+                        android:textColor="@color/gray"
+                        android:textSize="20dp"
+                        app:trackTint="@drawable/switch_track_color"
+                        app:thumbTint="@android:color/white"
+                        android:splitTrack="false"
+                        android:theme="@style/CustomSwitch"/>
+                </LinearLayout>
+
+                <!-- 定时清理设置区域 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="排泄次数后清理"
+                        android:textSize="16sp"/>
+
+                    <EditText
+                        android:id="@+id/clean_after_count"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="16sp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="次"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+
+                <!-- 图片区域 -->
+                <ImageView
+                    android:id="@+id/clean_image"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_cleanrobot"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- 一键清理按钮 -->
+                <Button
+                    android:id="@+id/btn_onekey_clean"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="一键清入马桶"
+                    android:backgroundTint="#4CAF50"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- 摄像头预览区域 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- 摄像头选择开关区域 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="摄像头选择"
+                        android:textSize="16sp"
+                        android:textColor="#333333"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="房间"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="4dp"/>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/room_camera_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            app:trackTint="@drawable/switch_track_color"
+                            app:thumbTint="@android:color/white"
+                            android:splitTrack="false"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="猫砂盆"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="4dp"/>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/litter_box_camera_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:trackTint="@drawable/switch_track_color"
+                            app:thumbTint="@android:color/white"
+                            android:splitTrack="false"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 摄像头预览区域 -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <WebView
+                        android:id="@+id/webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/camera_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="摄像头已关闭"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:background="#80000000"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- 标题和控制模式开关 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="遥控车控制"
+                        android:textColor="#333333"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="遥控模式"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="4dp"/>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/remote_control_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:trackTint="@drawable/switch_track_color"
+                            app:thumbTint="@android:color/white"
+                            android:splitTrack="false"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 方向控制 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_horizontal">
+
+                    <Button
+                        android:id="@+id/btn_forward"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="前进"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="#4CAF50"
+                        android:textColor="@android:color/white"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_left"
+                            android:layout_width="66dp"
+                            android:layout_height="40dp"
+                            android:text="左"
+                            android:layout_marginEnd="16dp"
+                            android:backgroundTint="#2196F3"
+                            android:textColor="@android:color/white"/>
+
+                        <Button
+                            android:id="@+id/btn_stop"
+                            android:layout_width="60dp"
+                            android:layout_height="40dp"
+                            android:text="停"
+                            android:backgroundTint="#F44336"
+                            android:textColor="@android:color/white"/>
+
+                        <Button
+                            android:id="@+id/btn_right"
+                            android:layout_width="60dp"
+                            android:layout_height="40dp"
+                            android:text="右"
+                            android:layout_marginStart="16dp"
+                            android:backgroundTint="#2196F3"
+                            android:textColor="@android:color/white"/>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_backward"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:text="后退"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="#4CAF50"
+                        android:textColor="@android:color/white"/>
+                </LinearLayout>
+
+                <!-- 前进/后退速度控制 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="前进/后退速度"
+                        android:textSize="16sp"/>
+
+                    <SeekBar
+                        android:id="@+id/seek_speed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:max="100"
+                        android:progress="50"/>
+
+                    <TextView
+                        android:id="@+id/tv_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="线速度: 50%"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!-- 转弯速度控制（新增部分） -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_turn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="转弯速度"
+                        android:textSize="16sp"/>
+
+                    <SeekBar
+                        android:id="@+id/seek_turn_speed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:max="100"
+                        android:progress="30"/>
+
+                    <TextView
+                        android:id="@+id/tv_turn_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="角速度: 30%"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 排泄记录卡片 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/timepullcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardPreventCornerOverlap="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+
+                <!-- 调试日志区域（可滚动） -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="排泄日志"
+                    android:textColor="#666"
+                    android:textSize="14dp" />
+
+                <ListView
+                    android:id="@+id/listpull"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="#cccccc"
+                    android:dividerHeight="1dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

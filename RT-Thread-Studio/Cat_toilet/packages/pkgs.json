@@ -1,0 +1,22 @@
+[
+ {
+  "path": "/packages/iot/at_device", 
+  "ver": "v2.0.4", 
+  "name": "AT_DEVICE"
+ }, 
+ {
+  "path": "/packages/iot/iot_cloud/ali-iotkit", 
+  "ver": "v3.0.2", 
+  "name": "ALI_IOTKIT"
+ }, 
+ {
+  "path": "/packages/language/JSON/cJSON", 
+  "ver": "v1.7.17", 
+  "name": "CJSON"
+ }, 
+ {
+  "path": "/packages/peripherals/sensors/ap3216c", 
+  "ver": "v2.0.0", 
+  "name": "AP3216C"
+ }
+]

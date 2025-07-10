@@ -1,0 +1,3 @@
+<launch>
+    <node name="detection_script" pkg="camera" type="detection.py" output="screen"/>
+</launch>

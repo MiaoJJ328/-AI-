@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.feedFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- 喂食卡片 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="180dp"
+                android:layout_height="220dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardPreventCornerOverlap="true"
+                android:layout_weight="1">
+
+                <!-- 主布局：垂直排列 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+                    android:padding="20dp"
+                    android:gravity="center_horizontal">
+
+                    <!-- 标题和开关区域 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp"
+                        android:paddingBottom="0dp"
+                        android:background="?attr/selectableItemBackgroundBorderless">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:letterSpacing="0.02"
+                            android:text="给养粮食"
+                            android:textColor="#333333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/food_byhand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:trackTint="@drawable/switch_track_color"
+                            app:thumbTint="@android:color/white"
+                            android:splitTrack="false"
+                            android:theme="@style/CustomSwitch"/>
+                    </LinearLayout>
+
+                    <!-- 图标区域 -->
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/nav_food_eat_deep"
+                        android:scaleType="fitCenter"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="2dp"/>
+
+                    <!-- 描述文本 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Food"
+                        android:textColor="#666666"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+<!--喂水卡片-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="180dp"
+                android:layout_height="220dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardPreventCornerOverlap="true"
+                android:layout_weight="1">
+
+                <!-- 主布局：垂直排列 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+                    android:padding="20dp"
+                    android:gravity="center_horizontal">
+
+                    <!-- 标题和开关区域 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp"
+                        android:paddingBottom="0dp"
+                        android:background="?attr/selectableItemBackgroundBorderless">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="给养水阀"
+                            android:textSize="18sp"
+                            android:textColor="#333333"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.02"/>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/water_byhand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:trackTint="@drawable/switch_track_color"
+                            app:thumbTint="@android:color/white"
+                            android:splitTrack="false"
+                            android:theme="@style/CustomSwitch"/>
+                    </LinearLayout>
+
+                    <!-- 图标区域 -->
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/nav_food_drink"
+                        android:scaleType="fitCenter"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="2dp"/>
+
+                    <!-- 描述文本 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Water"
+                        android:textColor="#666666"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardPreventCornerOverlap="true"
+            android:layout_weight="1">
+
+            <!-- 主布局：垂直排列 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:padding="20dp"
+                android:gravity="center_horizontal">
+
+                <!-- 标题和开关区域 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:paddingBottom="0dp"
+                    android:background="?attr/selectableItemBackgroundBorderless">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="玩耍"
+                        android:textSize="18sp"
+                        android:textColor="#333333"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.02"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/food_water_play"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/switch_off"
+                        android:textColor="@color/gray"
+                        android:textSize="20dp"
+                        app:trackTint="@drawable/switch_track_color"
+                        app:thumbTint="@android:color/white"
+                        android:splitTrack="false"
+                        android:theme="@style/CustomSwitch"/>
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/clockwise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="6dp"
+                        android:layout_toLeftOf="@+id/play"
+                        android:layout_marginEnd="30dp"
+                        android:splitTrack="false"
+                        android:theme="@style/LongSwitch"
+                        app:thumbTint="@android:color/white"
+                        app:trackTint="@drawable/switch_track_color" >
+                    </androidx.appcompat.widget.SwitchCompat>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/clockwise"
+                        android:layout_toLeftOf="@+id/play"
+                        android:layout_marginEnd="35dp"
+                        android:text="顺时针旋转"
+                        android:textColor="@color/gray"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/anticlockwise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="6dp"
+                        android:layout_toRightOf="@+id/play"
+                        android:layout_marginLeft="30dp"
+                        android:splitTrack="false"
+                        android:theme="@style/LongSwitch"
+                        app:thumbTint="@android:color/white"
+                        app:trackTint="@drawable/switch_track_color" >
+                    </androidx.appcompat.widget.SwitchCompat>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/clockwise"
+                        android:layout_toRightOf="@+id/play"
+                        android:layout_marginLeft="35dp"
+                        android:text="逆时针旋转"
+                        android:textColor="@color/gray">
+
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/play"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="2dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/nav_food_play" />
+
+                </RelativeLayout>
+                <!-- 描述文本 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="play"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- 自动喂食开关卡片 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardPreventCornerOverlap="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自动喂食设置"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="开启自动喂食"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/auto_food"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:trackTint="@drawable/switch_track_color"
+                        app:thumbTint="@android:color/white"
+                        android:splitTrack="false"
+                        android:theme="@style/CustomSwitch"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="投喂时间间隔"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/nav_food_timer2">
+                    </ImageView>
+
+
+                    <EditText
+                        android:id="@+id/feedHoursInput"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:hint="小时"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="16dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="小时"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/feedMinutesInput"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:hint="分钟"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="16sp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="分钟"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="最大喂食量"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/nav_food_maxweight">
+                    </ImageView>
+
+                    <EditText
+                        android:id="@+id/maxFeedAmountInput"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:hint="克"
+                        android:inputType="number"
+                        android:textSize="16sp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="克"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- 状态信息卡片 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardPreventCornerOverlap="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="设备状态"
+                        android:textColor="#666"
+                        android:textSize="14dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="剩余食物量"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/nav_food_eat_deep">
+
+                        </ImageView>
+
+                        <ProgressBar
+                            android:id="@+id/foodLevelProgress"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="150dp"
+                            android:layout_height="8dp"
+                            android:max="100"
+                            android:progress="75"
+                            android:progressDrawable="@drawable/progressbar_track_food"/>
+
+                        <TextView
+                            android:id="@+id/foodLevelText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="75%"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="剩余水量"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/nav_food_drink">
+
+                        </ImageView>
+
+                        <ProgressBar
+                            android:id="@+id/waterLevelProgress"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="150dp"
+                            android:layout_height="8dp"
+                            android:max="100"
+                            android:progress="45"
+                            android:progressDrawable="@drawable/progressbar_track_water"/>
+
+                        <TextView
+                            android:id="@+id/waterLevelText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="45%"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/timefoodcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardPreventCornerOverlap="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+
+                <!-- 调试日志区域（可滚动） -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="饮食日志"
+                    android:textColor="#666"
+                    android:textSize="14dp" />
+
+                <ListView
+                    android:id="@+id/listfood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="#cccccc"
+                    android:dividerHeight="1dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

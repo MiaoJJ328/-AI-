@@ -1,0 +1,20 @@
+mqtt:
+  client:
+    protocol: 4    
+    client_id: "k1r45F1HfgR.Cat_paw|securemode=2,signmethod=hmacsha256,timestamp=1740207989773|" 
+  connection:
+    host: "iot-06z00godbmkjb42.mqtt.iothub.aliyuncs.com" 
+    port: 1883                                               
+    keepalive: 60                                             
+  account:
+    username: "Cat_paw&k1r45F1HfgR"                          
+    password: "6fdc90c86f48252b1fb5910d07f77a9ba1e7e44f4c467ea78a245755ed85df98"              
+bridge:
+  - factory: mqtt_bridge.bridge:RosToMqttBridge               
+    msg_type: std_msgs.msg:String                          
+    topic_from: "/to_aliyun"                                
+    topic_to: "/k1r45F1HfgR/Cat_paw/user/pawrx"              
+  - factory: mqtt_bridge.bridge:MqttToRosBridge               
+    msg_type: std_msgs.msg:String                            
+    topic_from: "/k1r45F1HfgR/Cat_paw/user/pawtx"            
+    topic_to: "/from_aliyun"                                 

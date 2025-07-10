@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CatVital" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.CatVital" parent="Base.Theme.CatVital" />
+
+<!--  switch样式  -->
+    <style name="CustomSwitch" parent="Widget.AppCompat.CompoundButton.Switch">
+        <!-- 滑轨粗细（核心属性） -->
+        <item name="trackHeight">60dp</item>  <!-- 轨道垂直高度（默认约14dp） -->
+
+        <!-- 配套调整滑块和间距 -->
+        <item name="thumbRadius">25dp</item>  <!-- 滑块半径（需小于轨道高度） -->
+        <item name="thumbTextPadding">40dp</item>  <!-- 滑块与轨道边缘间距 -->
+        <item name="switchMinWidth">50dp</item>  <!-- 最小总宽度 -->
+    </style>
+
+    <!--  长switch样式  -->
+    <style name="LongSwitch" parent="Widget.AppCompat.CompoundButton.Switch">
+        <!-- 滑轨粗细（核心属性） -->
+        <item name="trackHeight">60dp</item>  <!-- 轨道垂直高度（默认约14dp） -->
+
+        <!-- 配套调整滑块和间距 -->
+        <item name="thumbRadius">25dp</item>  <!-- 滑块半径（需小于轨道高度） -->
+        <item name="thumbTextPadding">40dp</item>  <!-- 滑块与轨道边缘间距 -->
+        <item name="switchMinWidth">80dp</item>  <!-- 最小总宽度 -->
+    </style>
+</resources>

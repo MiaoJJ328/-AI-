@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purple">#FFFF0FFF</color>
+    <color name="gray">#949294</color>
+    <color name="blue">#CEEDED</color>
+    <color name="littleBlack">#C92C2828</color>
+    <color name="血氧">#C92AC0F2</color>
+    <color name="体温">#F2871B</color>
+    <color name="heart_rate_color">#E76363</color> <!-- 与心率文字色一致 -->
+</resources>

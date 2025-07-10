@@ -1,0 +1,20 @@
+<!-- res/drawable/progressbar_track.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 背景轨道 -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="4dp" />
+            <solid android:color="#E0E0E0" /> <!-- 轨道底色 -->
+        </shape>
+    </item>
+
+    <!-- 进度条 -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="4dp" />
+                <solid android:color="#3595E4" /> <!-- 进度颜色 -->
+            </shape>
+        </clip>
+    </item>
+</layer-list>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- 透明棕色背景 -->
+    <solid android:color="#7FF4C699" /> <!-- 前两位(80)控制透明度 -->
+
+    <!-- 圆角（与CardView的cardCornerRadius保持一致） -->
+    <corners android:radius="16dp"/>
+
+    <!-- 如果需要边框 -->
+    <stroke
+        android:width="1dp"
+        android:color="#60A1887F"/> <!-- 更浅的透明棕色边框 -->
+</shape>

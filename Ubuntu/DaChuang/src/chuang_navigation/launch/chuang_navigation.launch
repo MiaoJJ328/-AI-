@@ -1,0 +1,56 @@
+<launch>
+  <!-- * Arguments -->
+  <arg name="open_rviz" default="true"/>
+  
+  <arg name="map_file" default="$(find chuang_navigation)/maps/map2207_4.yaml"/>
+  
+  <arg name="model" default="$(find julab_mini)/urdf/julab_mini.urdf.xacro"/>
+
+  <!-- * Robot Description -->
+  
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"/>
+
+  <!-- * Robot State -->
+  
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+   
+    <param name="publish_frequency" type="double" value="10.0"/>
+  </node>
+
+  <!-- * Lidar (Commented Out) -->
+ 
+  <!-- <include file="$(find rplidar_ros)/launch/rplidar_s1.launch">
+       <param name="serial_port" type="string" value="/dev/ttyUSB_rplidar"/>
+  </include> -->
+
+  <!-- * Map Server -->
+  
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- * Move Base -->
+  
+  <include file="$(find laser_navigation)/launch/move_base.launch"/>
+
+  <!-- * AMCL -->
+ 
+  <include file="$(find laser_navigation)/launch/amcl.launch"/>
+
+
+  <node pkg="waterplus_map_tools" type="wp_navi_server" name="wp_navi_server" output="screen"/>  <!-- 路径点导航服务端 -->
+  <node pkg="waterplus_map_tools" type="wp_manager" name="wp_manager" output="screen"/>         <!-- 路径点管理工具 -->
+
+  <!-- 阿里云交互节点 -->
+  <node name="aliyun_node" pkg="aliyun" type="aliyun_node.py" output="screen"/>  <!-- 云端通信节点 -->
+
+  <!-- 自定义导航节点 -->
+  <node name="wp_node" pkg="chuang_navigation" type="w.py" output="screen"/>     <!-- 自定义路径点处理节点 -->
+  <!-- * RViz -->
+  
+  <group if="$(arg open_rviz)">
+    
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find laser_navigation)/rviz/julab_navigation.rviz"/>
+  </group>
+</launch>

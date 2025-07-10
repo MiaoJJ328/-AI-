@@ -1,0 +1,102 @@
+<!-- 
+  增强版机器人导航启动文件
+  新增功能：集成路径点管理、云端交互、自定义导航节点
+-->
+
+<launch>
+  <!-- ************************ 参数定义 ************************ -->
+  <!-- 是否开启RViz可视化 -->
+  <arg name="open_rviz" default="false"/>
+  
+  <!-- 地图文件路径（map2207_2.yaml被注释） -->
+  <arg name="map_file" default="$(find chuang_navigation)/maps/map2207_4.yaml"/>
+  
+  <!-- 机器人URDF模型路径 -->
+  <arg name="model" default="$(find julab_mini)/urdf/julab_mini.urdf.xacro"/>
+
+  <!-- ************************ 机器人模型 ************************ -->
+  <!-- 加载Xacro模型生成URDF描述 -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"/>
+
+  <!-- ************************ 机器人状态发布 ************************ -->
+  <!-- 关节状态发布，50Hz高频更新 -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <!-- <param name="rate" value="50"/>  比标准版本更高的更新频率 -->
+  </node>
+
+  <!-- 机器人整体状态发布 -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+    <param name="publish_frequency" type="double" value="10.0"/>  <!-- 发布频率50Hz -->
+  </node>
+
+  <!-- ************************ 导航全局设置 ************************ -->
+  <!-- 禁用仿真时间（使用真实硬件时间） -->
+  <param name="/use_sim_time" value="false"/>
+
+  <!-- ************************ 导航核心配置 ************************ -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <!-- 代价地图参数 -->
+    <rosparam file="$(find laser_navigation)/teb/cfg/diff_drive/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find laser_navigation)/teb/cfg/diff_drive/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    
+    <!-- 局部/全局代价地图配置 -->
+    <rosparam file="$(find laser_navigation)/teb/cfg/diff_drive/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find laser_navigation)/teb/cfg/diff_drive/global_costmap_params.yaml" command="load" />
+    
+    <!-- 规划器配置 -->
+    <rosparam file="$(find laser_navigation)/teb/cfg/diff_drive/teb_local_planner_params.yaml" command="load" />  <!-- TEB局部规划器-->
+    <!-- <rosparam file="$(find laser_navigation)/param/dwa_local_planner_params.yaml" command="load" />  备用DWA规划器 -->
+    <rosparam file="$(find laser_navigation)/teb/cfg/diff_drive/global_planner.yaml" command="load" />          <!-- 全局规划器 -->
+
+    <!-- 规划器选择 -->
+    <param name="base_global_planner" value="global_planner/GlobalPlanner" />  <!-- 默认全局规划器 -->
+    <!-- <param name="base_global_planner" value="global_planner/CarrotPlanner" /> -->  <!-- 备用规划器1 -->
+    <!-- <param name="base_global_planner" value="global_planner/NavfnROS" /> -->      <!-- 备用规划器2 -->
+
+    <!-- 规划参数 -->
+    <param name="planner_frequency" value="1.0" />    <!-- 全局规划频率1Hz -->
+    <param name="planner_patience" value="5.0" />     <!-- 允许规划失败时间5秒 -->
+
+    <!-- 控制器选择 -->
+    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />  <!--使用TEB局部规划器-->
+    <!-- <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" /> 备用DWA控制器 -->
+    
+    <!-- 控制参数 -->
+    <param name="controller_frequency" value="10.0" />  <!-- 控制频率10Hz -->
+    <param name="controller_patience" value="15.0" />   <!-- 允许控制失败时间15秒 -->
+  </node>
+
+  <!-- ************************ 地图服务 ************************ -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen">
+    <param name="frame_id" value="map"/>  <!-- 地图坐标系设为'map' -->
+  </node>
+
+  <!-- ************************ AMCL定位 ************************ -->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <!-- 加载AMCL参数文件 -->
+    <rosparam file="$(find laser_navigation)/teb/cfg/amcl_params.yaml" command="load" />
+    
+    <!-- 全向移动模型配置 -->
+    <!-- <param name="odom_model_type" value="omni"/>  适用于全向移动底盘 -->
+    <param name="odom_model_type" value="diff"/>  <!-- 适用于差分驱动底盘 -->
+    <!-- 初始位姿设置 -->
+    <param name="initial_pose_x" value="0"/>  <!-- X初始坐标 -->
+    <param name="initial_pose_y" value="0"/>  <!-- Y初始坐标 -->
+    <param name="initial_pose_a" value="0"/>  <!-- 初始朝向角 -->
+  </node>
+
+  <!-- ************************ 可视化与扩展功能 ************************ -->
+  <!-- 条件启动RViz -->
+  <node name="rviz" if="$(arg open_rviz)" pkg="rviz" type="rviz" args="-d $(find laser_navigation)/rviz/julab_navigation.rviz"/>
+
+  <!-- 路径点导航服务 -->
+  <node pkg="waterplus_map_tools" type="wp_navi_server" name="wp_navi_server" output="screen"/>  <!-- 路径点导航服务端 -->
+  <node pkg="waterplus_map_tools" type="wp_manager" name="wp_manager" output="screen"/>         <!-- 路径点管理工具 -->
+
+  <!-- 阿里云交互节点 -->
+  <node name="aliyun_node" pkg="aliyun" type="aliyun_node.py" output="screen"/>  <!-- 云端通信节点 -->
+
+  <!-- 自定义导航节点 -->
+  <node name="wp_node" pkg="chuang_navigation" type="w.py" output="screen"/>     <!-- 自定义路径点处理节点 -->
+  <!-- <node name="wp_node" pkg="chuang_navigation" type="wp_node.py" output="screen"/> -->  <!-- 备用Python节点 -->
+</launch>
